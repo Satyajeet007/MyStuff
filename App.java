@@ -35,12 +35,14 @@ public class App {
 	/**** Insert ****/
 	// create a document to store key and value
 	BasicDBObject document = new BasicDBObject();
+	document.put("name", "Satyajeet");
 	document.put("age", 30);
 	document.put("createdDate", new Date());
 	table.insert(document);
  
 	/**** Find and display ****/
 	BasicDBObject searchQuery = new BasicDBObject();
+	searchQuery.put("name", "Satyajeet Rathour");
  
 	DBCursor cursor = table.find(searchQuery);
  
@@ -49,9 +51,12 @@ public class App {
 	}
  
 	/**** Update ****/
+	// search document where name="satyajeet" and update it with new values
 	BasicDBObject query = new BasicDBObject();
+	query.put("name", "satyajeet");
  
 	BasicDBObject newDocument = new BasicDBObject();
+	newDocument.put("name", "satyajeet-updated");
  
 	BasicDBObject updateObj = new BasicDBObject();
 	updateObj.put("$set", newDocument);
@@ -60,6 +65,7 @@ public class App {
  
 	/**** Find and display ****/
 	BasicDBObject searchQuery2 
+	    = new BasicDBObject().append("name", "satyajeet-updated");
  
 	DBCursor cursor2 = table.find(searchQuery2);
  

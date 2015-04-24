@@ -92,5 +92,13 @@ System.out.println("by metacharacters ...");
 System.out.println(Pattern.matches("[789]{1}\\d{9}", "8853038949"));//true  
 System.out.println(Pattern.matches("[789]{1}\\d{9}", "3853038949"));//false (starts from 3)  
   
+System.out.println("WHITE SPACE CHARACTER"); //  false (starts from 3)  
+  
 
+System.out.println(Pattern.matches("\\s", "a"));//false (non-digit)  
+System.out.println(Pattern.matches("\\s", " "));//true (a whitespace character)
+System.out.println(Pattern.matches("\\s", ""));//false (not a white space character)
+System.out.println(Pattern.matches("\\S", "a"));//true (a non whitespace character )  
+System.out.println(Pattern.matches("\\S", " "));//fase (a whitespace character)
+System.out.println(Pattern.matches("\\S", ""));//false (nor a white space character not any digit NULL)
 }} 

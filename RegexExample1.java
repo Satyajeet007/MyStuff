@@ -101,4 +101,61 @@ System.out.println(Pattern.matches("\\s", ""));//false (not a white space charac
 System.out.println(Pattern.matches("\\S", "a"));//true (a non whitespace character )  
 System.out.println(Pattern.matches("\\S", " "));//fase (a whitespace character)
 System.out.println(Pattern.matches("\\S", ""));//false (nor a white space character not any digit NULL)
+///commit from here  ...next time
+System.out.println("ANY WORD CHARACTER"); 
+System.out.println(Pattern.matches("\\w", "a"));//true (a word character )  
+System.out.println(Pattern.matches("\\w", "aaa"));//false (not a word character)
+System.out.println(Pattern.matches("\\w", "12"));//false (not a word character)
+System.out.println(Pattern.matches("\\w", " "));//false (not a word character)
+System.out.println(Pattern.matches("\\w", ""));//false (not a word character)
+//\W	Any non-word character, short for [^\w]
+System.out.println("ANY NON WORD CHARACTER"); 
+System.out.println(Pattern.matches("\\W", "a"));//false (a word character )  
+System.out.println(Pattern.matches("\\W", "aaa"));//false (not a word character)
+System.out.println(Pattern.matches("\\W", "12"));//false (not a word character)
+System.out.println(Pattern.matches("\\W", " "));//true (not a word character)
+System.out.println(Pattern.matches("\\W", ""));//false (not a word character not a non word NULL)
+System.out.println(Pattern.matches("\\W", "1"));//false (not a word character)
+
+System.out.println(" a word boundry");
+
+String data1 = "Today, java is object oriented language";
+
+String regex = "\\bjava\\b";
+
+Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
+Matcher matcher = pattern.matcher(data1);
+while (matcher.find())
+{
+ System.out.print("Start index: " + matcher.start());
+ System.out.print(" End index: " + matcher.end() + " ");
+ System.out.println(matcher.group());
+}
+
+//OUTPUT
+//a word boundry
+//Start index: 7 End index: 11 java
+
+System.out.println("NOT A word boundry");
+///where we shoul use \B::where our patter lies inside the string anywhere like ex-- java word can lie anywhere in the data string hellojava and ajava.
+String data2 = "Searching in words : javap myjava myjavaprogram";
+
+String regex2= "\\Bjava|java\\B";
+
+ 
+Pattern pattern2= Pattern.compile(regex2, Pattern.CASE_INSENSITIVE);
+Matcher matcher2= pattern2.matcher(data2);
+while (matcher2.find())
+{
+ System.out.print("Start index: " + matcher2.start());
+ System.out.print(" End index: " + matcher2.end() + " ");
+ System.out.println(matcher2.group());
+}
+
+//NOT A word boundry
+//OUTPUT
+//Start index: 21 End index: 25 java
+//Start index: 29 End index: 33 java
+//Start index: 36 End index: 40 java
+
 }} 

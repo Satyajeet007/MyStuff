@@ -17,10 +17,9 @@ boolean b4 = Pattern.compile("..saklovesatya").matcher("xxsaklovesatya").matches
 
 boolean b5 = Pattern.matches("x.x", "xxx");
 
-System.out.println(Pattern.matches("^xxx", "xxx"));  
+System.out.println(Pattern.matches("^xxx", "xxx"));  //true
 
-  
-System.out.println(b+" "+b2+" "+b3+" "+b4+" "+b5);  
+System.out.println(b+" "+b2+" "+b3+" "+b4+" "+b5);  //true true true true true
 
 System.out.println(Pattern.matches("[amn]", "abcd"));//false (not a or m or n)  
 

@@ -13,7 +13,7 @@ boolean b2=Pattern.compile(".s").matcher("as").matches();
 //3rd way  
 boolean b3 = Pattern.matches(".s", "as");  
 
-boolean b4 = Pattern.compile("..saklovesatya").matcher("xxsaklovesatya").matches();
+boolean b4 = Pattern.compile("..satyajeet007").matcher("xxsatyajeet007").matches();
 
 boolean b5 = Pattern.matches("x.x", "xxx");
 

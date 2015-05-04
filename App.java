@@ -84,3 +84,10 @@ public class App {
  
   }
 }
+
+///HOW TO Run This Program 
+
+// # Start+ mongod.exe 
+// # Start+ mongo.exe.....!! it will connect to the test
+// # type use testdb            i.e Db name
+// # type db.user.find( )       i.e table name  

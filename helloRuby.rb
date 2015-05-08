@@ -1,10 +1,8 @@
  #The Ruby language was created by Yukihiro Matsumoto (commonly known as ‘Matz’) and it was first released in 1995.
- #Ruby is a cross-platform interpreted and Compiled language which has many features in common with other ‘scripting’
- # -languages such as Perl and Python.
+ #Ruby is a cross-platform interpreted and Compiled language which has many features in common with other ‘scripting’ languages such as Perl and Python.
  #Ruby is Fully Object Oriented language. 
  #just to print hello world ## TO RUN this simply go to command prompt and type ruby yourFilename.rb 
- #puts adds a newline to the end of the output. print does not.and p simply put the value of object its same 
- # -as variableName.inspect 
+ #puts adds a newline to the end of the output. print does not.and p simply put the value of object its same as variableName.inspect 
  puts( "Hello World" )
  print( "Hello World" )
  puts( "Hello World" )
@@ -206,6 +204,114 @@ for i in 0..5
       redo
    end
 end
+####################
+######################MethodS IN RUBY............!!!!!!!!
+def test
+   i = 100
+   j = 10
+end
+puts test
+# it will print the last declared variable value i.e.  "10" 
+def test
+   i = 100
+   j = 10
+   return i
+end
+puts test
+# it will print 100  
+######################
+def test (*test)
+   puts "The number of parameters is #{test.length}"
+   for i in 0...test.length
+      puts "The parameters are #{test[i]}"
+   end
+end
+test "ab", "cd", "ef"
+test "12", "sa", "pr", "ka"
+#######################
+# You invoke a block by using the yield statement.
+def test
+   puts "You are in the method"
+   yield
+   puts "You are again back to the method"
+   yield
+end
+test {puts "You are in the block"}      #  <---- block
+#O/P ::: 
+# You are in the method
+# You are in the block
+# You are again back to the method
+# You are in the block
+######################
+## Modules are a way of grouping together methods, classes, and constants.
+##Ruby Modules are similar to classes in that they hold a collection of methods, constants, and other
+# module and class definitions. Modules are defined much like classes are, but the module keyword is
+#   used in place of the class keyword. Unlike classes, you cannot create objects based on modules nor 
+#  can you subclass them; instead, you specify that you want the functionality of a particular module 
+#  to be added to the functionality of a class, or of a specific object. Modules stand alone; there is 
+#  no "module hierarchy" of inheritance. Modules is a good place to collect all your constants 
+#  in a central location.
+#===>>> Program in module is very puzzling to me :(
+#RETRY statement ::: If retry appears in rescue clause of begin expression, restart from the beginning of the 1begin body.
+####STRING CLASS
+puts %{Ruby is fun.} # equivalent to "Ruby is fun."
+puts %Q{ Ruby is fun. } #equivalent to "Ruby is fun."
+puts %q[Ruby is fun.]  #equivalent to a 'Ruby is fun.'
+#######################
+myStr = String.new("THIS IS TEST")
+foo = myStr.downcase
+myStr2= String.new("mylove")
+puts "#{foo}"
+foo2= myStr2.upcase
+puts "#{foo2}"
+#########################
+#########################RUBY ARRAY
+###Ruby arrays can hold objects such as String, Integer, Fixnum, Hash, Symbol, even other Array objects. Ruby arrays are
+# not as rigid as arrays in other languages. Ruby arrays grow automatically while adding elements to them.
+names = Array.new(20)
+puts names.size  # This returns 20
+puts names.length # This also returns 20
+###***** You can assign a value to each element in the array as follows:
+###   names = Array.new(4, "mac")
+####  puts "#{names}"     --> will print 4 times mac
+###**** nums = Array.[](1, 2, 3, 4,5) 
+####    puts nums   ---> will print 1 2 3 4 5
+###***  digits = Array(0..9)      ## if 0..20--> will print 0 to 20 
+#####   puts "#{digits}"         -->> Will create array of digits 0 1 2 3 4 5 6 7 8 9
+####****digits = Array(0..9)
+#       num = digits.at(6)
+#       puts "#{num}"   --->> this will print 6
+####****H = Hash["a" => 100, "b" => 200]
+#       puts "#{H['a']}"
+#       puts "#{H['b']}"      --> 100 200 
+####**** puts "Current Time : " + Time.new.inspect   --> will print current times
+####****
+time = Time.new
+puts "Current Time : " + time.inspect
+puts time.year    # => Year of the date 
+puts time.month   # => Month of the date (1 to 12)
+puts time.day     # => Day of the date (1 to 31 )
+puts time.wday    # => 0: Day of week: 0 is Sunday
+puts time.yday    # => 365: Day of year
+puts time.hour    # => 23: 24-hour clock
+puts time.min     # => 59
+puts time.sec     # => 59
+puts time.usec    # => 999999: microseconds
+puts time.zone    # => "UTC": timezone name
+#################################
+# July 8, 2008
+time1 = Time.local(2008, 7, 8)  
+# July 8, 2008, 09:10am, local time
+time2 = Time.local(2008, 7, 8, 9, 10)   
+# July 8, 2008, 09:10 UTC
+time3 = Time.utc(2008, 7, 8, 9, 10)  
+# July 8, 2008, 09:10:11 GMT (same as UTC)
+time4 = Time.gm(2008, 7, 8, 9, 10, 11) 
+puts time1
+puts time2
+puts time3
+puts time4
+##################################
 ############## MultiLine Comment
 =begin
  sat= 10.3

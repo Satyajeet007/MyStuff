@@ -1,8 +1,10 @@
  #The Ruby language was created by Yukihiro Matsumoto (commonly known as ‘Matz’) and it was first released in 1995.
- #Ruby is a cross-platform interpreted and Compiled language which has many features in common with other ‘scripting’ languages such as Perl and Python.
+ #Ruby is a cross-platform interpreted and Compiled language which has many features in common with other ‘scripting’
+ # -languages such as Perl and Python.
  #Ruby is Fully Object Oriented language. 
  #just to print hello world ## TO RUN this simply go to command prompt and type ruby yourFilename.rb 
- #puts adds a newline to the end of the output. print does not.and p simply put the value of object its same as variableName.inspect 
+ #puts adds a newline to the end of the output. print does not.and p simply put the value of object its same 
+ # -as variableName.inspect 
  puts( "Hello World" )
  print( "Hello World" )
  puts( "Hello World" )
